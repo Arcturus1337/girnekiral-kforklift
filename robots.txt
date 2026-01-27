@@ -1,0 +1,48 @@
+# Robots.txt for Girne Forklift
+# https://www.girneforklift.com.tr/robots.txt
+
+# Tüm arama motorlarına izin ver
+User-agent: *
+Allow: /
+
+# Ana sayfa
+Allow: /index.html
+
+# Sitemap konumu
+Sitemap: https://www.girneforklift.com.tr/sitemap.xml
+
+# Crawl delay (opsiyonel - sunucu yükünü azaltmak için)
+Crawl-delay: 1
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+Allow: /images/
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex Bot (Rusya pazarı için)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+
+# Baidu Bot (Çin pazarı için)
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+
+# Host direktifi (tercih edilen domain)
+Host: https://www.girneforklift.com.tr
